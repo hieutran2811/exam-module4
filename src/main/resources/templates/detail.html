@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>City detail</title>
+</head>
+<body>
+<h1>City detail</h1>
+<p>
+    <a href="/city">City list</a>
+</p>
+    <input th:type="hidden" name="id" th:field="*{city.id}">
+    <table>
+        <tr>
+            <td>City name:</td>
+            <td><p  th:text="*{city.name}"></p></td>
+        </tr>
+        <tr>
+            <td>Country:</td>
+            <td><p  th:text="*{city.country.name}"></p></td>
+        </tr>
+        <tr>
+            <td>Acreage:</td>
+            <td><p  th:text="*{city.acreage}"></p></td>
+        </tr>
+        <tr>
+            <td>Population:</td>
+            <td><p th:text="*{city.population}"></p></td>
+        </tr>
+        <tr>
+            <td>GDP:</td>
+            <td><p th:text="*{city.GDP}"></p></td>
+        </tr>
+        <tr>
+            <td>Introduce:</td>
+            <td><p th:text="*{city.introduce}"></p></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><a th:href="@{/edit-city/__${city.id}__ }">Edit</a></td>
+        </tr>
+    </table>
+</body>
+</html>
